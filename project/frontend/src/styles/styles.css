@@ -1,0 +1,615 @@
+/* ============================================
+   MADAMANI STRIKERS FC - DESIGN SYSTEM
+   ============================================ */
+
+/* Color Palette */
+:root {
+  --primary-red: #D72638;
+  --dark-black: #111;
+  --light-white: #FAFAFA;
+  --gray-text: #666;
+  --gray-light: #f0f0f0;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --info: #17a2b8;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--light-white);
+  color: var(--dark-black);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 1rem 0;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+a {
+  color: var(--primary-red);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--dark-black);
+}
+
+/* ============================================
+   NAVBAR & NAVIGATION
+   ============================================ */
+
+.navbar {
+  background-color: var(--dark-black);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h3 {
+  color: var(--primary-red);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: var(--light-white);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-red);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--light-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--primary-red);
+  color: var(--light-white);
+}
+
+.btn-primary:hover {
+  background-color: #a91b2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(215, 38, 56, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--gray-text);
+  color: var(--light-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--dark-black);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--gray-light);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px rgba(215, 38, 56, 0.1);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-black));
+  color: var(--light-white);
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--light-white);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   CARDS & GRIDS
+   ============================================ */
+
+.team-grid, .news-grid, .fixtures-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.team-card, .news-card, .fixture-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover, .news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.team-card img, .news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.team-card-content, .news-card, .fixture-card {
+  padding: 1.5rem;
+}
+
+.team-card h3, .news-card h3 {
+  color: var(--primary-red);
+  margin-bottom: 0.5rem;
+}
+
+.position, .role, .number, .nationality {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+  margin: 0.25rem 0;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.status-active {
+  background-color: var(--success);
+  color: white;
+}
+
+.status-inactive {
+  background-color: var(--gray-light);
+  color: var(--gray-text);
+}
+
+.status-injured {
+  background-color: var(--danger);
+  color: white;
+}
+
+.status-upcoming {
+  background-color: var(--info);
+  color: white;
+}
+
+.status-completed {
+  background-color: var(--success);
+  color: white;
+}
+
+/* ============================================
+   FIXTURE CARDS
+   ============================================ */
+
+.fixture-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: white;
+  border-left: 4px solid var(--primary-red);
+}
+
+.fixture-date {
+  text-align: center;
+  min-width: 80px;
+  padding: 1.5rem;
+}
+
+.fixture-date .date {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.fixture-date .time {
+  color: var(--gray-text);
+  font-size: 0.85rem;
+}
+
+.fixture-match {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.fixture-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fixture-team h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.fixture-team .score {
+  font-size: 1.5rem;
+  color: var(--primary-red);
+  font-weight: 700;
+}
+
+.fixture-vs {
+  text-align: center;
+}
+
+.competition {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+  text-transform: uppercase;
+}
+
+.fixture-venue {
+  text-align: right;
+  min-width: 150px;
+  padding: 1.5rem;
+}
+
+/* ============================================
+   NEWS CARDS
+   ============================================ */
+
+.news-summary {
+  color: var(--gray-text);
+  margin: 1rem 0;
+}
+
+.news-category {
+  display: inline-block;
+  background-color: var(--primary-red);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+
+.news-date {
+  color: var(--gray-text);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* ============================================
+   FILTER BUTTONS
+   ============================================ */
+
+.filter-btn, .role-filters, .status-filters {
+  background-color: transparent;
+  border: 2px solid var(--gray-light);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-red);
+  color: var(--primary-red);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+  color: white;
+}
+
+.role-filters, .status-filters {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   PAGES
+   ============================================ */
+
+.home-page, .team-page, .fixtures-page, .admin-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.team-page h1, .fixtures-page h1, .admin-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.featured-news, .about-section {
+  margin: 4rem 0;
+  padding: 2rem;
+}
+
+.about-section {
+  text-align: center;
+  background-color: var(--gray-light);
+  border-radius: 8px;
+}
+
+/* ============================================
+   LOGIN CONTAINER
+   ============================================ */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-black));
+}
+
+.login-card {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-card h1 {
+  color: var(--primary-red);
+}
+
+.login-card form {
+  margin-top: 2rem;
+}
+
+/* ============================================
+   ERROR & SUCCESS MESSAGES
+   ============================================ */
+
+.error-message {
+  background-color: var(--danger);
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.success-message {
+  background-color: var(--success);
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--dark-black);
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+    border-top: 2px solid var(--primary-red);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .team-grid, .news-grid, .fixtures-list {
+    grid-template-columns: 1fr;
+  }
+
+  .fixture-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .fixture-venue {
+    text-align: center;
+    min-width: auto;
+  }
+
+  .login-card {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .home-page, .team-page, .fixtures-page, .admin-page {
+    padding: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   MODAL STYLES
+   ============================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--light-white);
+  border-radius: 18px;
+  padding: 32px;
+  max-width: 440px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
